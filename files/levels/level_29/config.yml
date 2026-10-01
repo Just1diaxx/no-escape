@@ -1,0 +1,6 @@
+files_to_transfer:
+	- INTRODUCTION.md
+	- task.py
+file_sizes:
+	INTRODUCTION.md: 800
+	task.py: 2300

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_xunvn"]
+
+[resource]
+script = ExtResource("1_xunvn")
+id = &"ext_quantum_linter"
+title = "Quantum Static Linter"
+publisher = "compiler.corp"
+description = "Deep AST static inspection detecting edge-case runtime exceptions and type discrepancies."
+price = 100
+category = "Productivity"
+version = "1.1.0"
+icon_name = "bug"
+rating = 4.7
+downloads = "5.3k"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_ihydl"]
+
+[resource]
+script = ExtResource("1_ihydl")
+id = &"ext_ai_copilot"
+title = "KSK Neural Co-pilot"
+publisher = "cyberdyne.ai"
+description = "Real-time AI suggestions, autonomous docstring synthesis, and logic refactoring assistant."
+price = 250
+category = "AI Tools"
+version = "3.1.0"
+icon_name = "bot"
+rating = 4.9
+downloads = "12.3k"

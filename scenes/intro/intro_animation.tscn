@@ -1,0 +1,578 @@
+[gd_scene format=3 uid="uid://dmj6qkwu6o67k"]
+
+[ext_resource type="Script" path="res://scenes/intro/intro_animation.gd" id="1_script"]
+
+[sub_resource type="Animation" id="Animation_wake_walk"]
+resource_name = "wake_and_walk"
+length = 7.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Room/Character:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0, 1.35, 1.55, 1.8, 2.05, 2.3, 2.55, 2.8, 3.05, 3.3, 3.55, 3.8, 4.05, 4.3, 4.55, 4.8, 5.05, 5.3, 5.5, 5.7, 5.9, 6.1, 7.0),
+"transitions": PackedFloat32Array(1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.8, 1.8, 2.0, 2.5, 1),
+"update": 0,
+"values": [Vector2(295, 500), Vector2(295, 500), Vector2(310, 494), Vector2(330, 497), Vector2(355, 494), Vector2(385, 497), Vector2(415, 494), Vector2(445, 497), Vector2(475, 494), Vector2(510, 497), Vector2(540, 494), Vector2(570, 497), Vector2(600, 494), Vector2(630, 497), Vector2(660, 494), Vector2(690, 497), Vector2(715, 494), Vector2(735, 497), Vector2(755, 496), Vector2(770, 498), Vector2(780, 499), Vector2(788, 500), Vector2(790, 500), Vector2(790, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Room/Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2, 1.35, 7.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, -1.5708, -0.4, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Room/Desk/PCTower/LED:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.8, 5.9, 7.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.2, 0.2, 0.2, 1), Color(0.2, 0.2, 0.2, 1), Color(0, 1, 0.8, 1), Color(0, 1, 0.8, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Room/Desk/Monitor/ScreenLight:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.9, 6.2, 7.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.04, 0.04, 0.04, 1), Color(0.04, 0.04, 0.04, 1), Color(0.85, 0.95, 1, 1), Color(0.85, 0.95, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7.0),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 360), Vector2(640, 360)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:zoom")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7.0),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/FadeRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6, 6.2, 6.9),
+"transitions": PackedFloat32Array(1, 2.0, 1, 0.5),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Room/Character/RightArm:rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.0, 1.3, 1.55, 1.8, 2.05, 2.3, 2.55, 2.8, 3.05, 3.3, 3.55, 3.8, 4.05, 4.3, 4.55, 4.8, 5.05, 5.3, 5.5, 5.7, 5.9, 6.1, 6.4, 6.7, 7.0),
+"transitions": PackedFloat32Array(1, 0.5, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 1.2, 1.5, 1.5, 1, 0.5, 1.5, 1.5, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.45, -0.35, 0.3, 0.15, 0.05, 0.0, -1.3, -0.6, -0.15, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Room/Character/LeftArm:rotation")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.0, 1.3, 1.55, 1.8, 2.05, 2.3, 2.55, 2.8, 3.05, 3.3, 3.55, 3.8, 4.05, 4.3, 4.55, 4.8, 5.05, 5.3, 5.5, 5.7, 5.9, 7.0),
+"transitions": PackedFloat32Array(1, 0.5, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 1.2, 1.5, 1.5, 2.0, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.4, 0.5, -0.35, 0.45, -0.3, -0.15, -0.05, 0.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Room/Character/LeftLeg:rotation")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.0, 1.3, 1.55, 1.8, 2.05, 2.3, 2.55, 2.8, 3.05, 3.3, 3.55, 3.8, 4.05, 4.3, 4.55, 4.8, 5.05, 5.3, 5.5, 5.7, 5.9, 7.0),
+"transitions": PackedFloat32Array(1, 0.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 1.0, 1.5, 1.5, 2.0, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.5, -0.25, 0.25, 0.1, 0.03, 0.0, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Room/Character/RightLeg:rotation")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.0, 1.3, 1.55, 1.8, 2.05, 2.3, 2.55, 2.8, 3.05, 3.3, 3.55, 3.8, 4.05, 4.3, 4.55, 4.8, 5.05, 5.3, 5.5, 5.7, 5.9, 7.0),
+"transitions": PackedFloat32Array(1, 0.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 1.0, 1.5, 1.5, 2.0, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.35, 0.6, -0.25, 0.5, -0.25, -0.1, -0.03, 0.0, 0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Room/Character/Head:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.35, 1.55, 1.8, 2.05, 2.3, 2.55, 2.8, 3.05, 3.3, 3.55, 3.8, 4.05, 4.3, 4.55, 4.8, 5.05, 5.3, 5.9, 7.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.03, 0.03, -0.03, 0.03, -0.03, 0.03, -0.03, 0.03, -0.03, 0.03, -0.03, 0.03, -0.03, 0.03, -0.025, 0.025, -0.015, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_RESET"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Room/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(295, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Room/Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Room/Desk/PCTower/LED:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.2, 0.2, 0.2, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Room/Desk/Monitor/ScreenLight:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.04, 0.04, 0.04, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 360)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:zoom")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/FadeRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Room/Character/RightArm:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Room/Character/LeftArm:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Room/Character/LeftLeg:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Room/Character/RightLeg:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Room/Character/Head:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
+_data = {
+&"RESET": SubResource("Animation_RESET"),
+&"wake_and_walk": SubResource("Animation_wake_walk")
+}
+
+[node name="IntroAnimation" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -600.0
+offset_top = -400.0
+offset_right = 1900.0
+offset_bottom = 1200.0
+color = Color(0, 0, 0, 1)
+
+[node name="Room" type="Node2D" parent="."]
+
+[node name="FloorLine" type="ColorRect" parent="Room"]
+offset_left = 150.0
+offset_top = 560.0
+offset_right = 1130.0
+offset_bottom = 564.0
+color = Color(0.35, 0.38, 0.45, 1)
+
+[node name="Bed" type="Node2D" parent="Room"]
+position = Vector2(230, 480)
+
+[node name="Frame" type="ColorRect" parent="Room/Bed"]
+offset_left = -20.0
+offset_top = 50.0
+offset_right = 180.0
+offset_bottom = 80.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="Headboard" type="ColorRect" parent="Room/Bed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 0.0
+offset_bottom = 80.0
+color = Color(0.32, 0.35, 0.42, 1)
+
+[node name="Mattress" type="ColorRect" parent="Room/Bed"]
+offset_left = 0.0
+offset_top = 30.0
+offset_right = 175.0
+offset_bottom = 50.0
+color = Color(0.45, 0.48, 0.55, 1)
+
+[node name="Pillow" type="ColorRect" parent="Room/Bed"]
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 45.0
+offset_bottom = 30.0
+color = Color(0.65, 0.68, 0.75, 1)
+
+[node name="Blanket" type="ColorRect" parent="Room/Bed"]
+offset_left = 50.0
+offset_top = 26.0
+offset_right = 175.0
+offset_bottom = 50.0
+color = Color(0.3, 0.34, 0.4, 1)
+
+[node name="Desk" type="Node2D" parent="Room"]
+position = Vector2(850, 420)
+
+[node name="DeskSurface" type="ColorRect" parent="Room/Desk"]
+offset_left = -60.0
+offset_top = 90.0
+offset_right = 160.0
+offset_bottom = 102.0
+color = Color(0.35, 0.38, 0.45, 1)
+
+[node name="LegLeft" type="ColorRect" parent="Room/Desk"]
+offset_left = -50.0
+offset_top = 102.0
+offset_right = -40.0
+offset_bottom = 140.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="LegRight" type="ColorRect" parent="Room/Desk"]
+offset_left = 140.0
+offset_top = 102.0
+offset_right = 150.0
+offset_bottom = 140.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="PCTower" type="Node2D" parent="Room/Desk"]
+position = Vector2(100, 30)
+
+[node name="TowerBody" type="ColorRect" parent="Room/Desk/PCTower"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 60.0
+color = Color(0.2, 0.22, 0.28, 1)
+
+[node name="LED" type="ColorRect" parent="Room/Desk/PCTower"]
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 24.0
+offset_bottom = 18.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Monitor" type="Node2D" parent="Room/Desk"]
+position = Vector2(55, -8)
+
+[node name="StandBase" type="ColorRect" parent="Room/Desk/Monitor"]
+offset_left = -25.0
+offset_top = 92.0
+offset_right = 25.0
+offset_bottom = 98.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="StandPole" type="ColorRect" parent="Room/Desk/Monitor"]
+offset_left = -4.0
+offset_top = 65.0
+offset_right = 4.0
+offset_bottom = 92.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="Bezel" type="ColorRect" parent="Room/Desk/Monitor"]
+offset_left = -50.0
+offset_top = 0.0
+offset_right = 50.0
+offset_bottom = 65.0
+color = Color(0.18, 0.2, 0.25, 1)
+
+[node name="ScreenLight" type="ColorRect" parent="Room/Desk/Monitor"]
+offset_left = -45.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 60.0
+color = Color(0.04, 0.04, 0.04, 1)
+
+[node name="MonitorGlow" type="PointLight2D" parent="Room/Desk/Monitor"]
+position = Vector2(0, 32)
+energy = 0.0
+
+[node name="Keyboard" type="ColorRect" parent="Room/Desk"]
+offset_left = -10.0
+offset_top = 84.0
+offset_right = 35.0
+offset_bottom = 90.0
+color = Color(0.2, 0.22, 0.28, 1)
+
+[node name="Mouse" type="ColorRect" parent="Room/Desk"]
+offset_left = 42.0
+offset_top = 85.0
+offset_right = 52.0
+offset_bottom = 90.0
+color = Color(0.2, 0.22, 0.28, 1)
+
+[node name="Chair" type="Node2D" parent="Room"]
+position = Vector2(790, 480)
+
+[node name="Seat" type="ColorRect" parent="Room/Chair"]
+offset_left = -20.0
+offset_top = 35.0
+offset_right = 20.0
+offset_bottom = 45.0
+color = Color(0.28, 0.3, 0.38, 1)
+
+[node name="Back" type="ColorRect" parent="Room/Chair"]
+offset_left = -20.0
+offset_top = -10.0
+offset_right = -12.0
+offset_bottom = 40.0
+color = Color(0.28, 0.3, 0.38, 1)
+
+[node name="Leg" type="ColorRect" parent="Room/Chair"]
+offset_left = -4.0
+offset_top = 45.0
+offset_right = 4.0
+offset_bottom = 80.0
+color = Color(0.2, 0.22, 0.28, 1)
+
+[node name="ChairBase" type="ColorRect" parent="Room/Chair"]
+offset_left = -20.0
+offset_top = 78.0
+offset_right = 20.0
+offset_bottom = 81.0
+color = Color(0.2, 0.22, 0.28, 1)
+
+[node name="Character" type="Node2D" parent="Room"]
+position = Vector2(295, 500)
+rotation = -1.5708
+
+[node name="Head" type="ColorRect" parent="Room/Character"]
+offset_left = -10.0
+offset_top = -58.0
+offset_right = 10.0
+offset_bottom = -38.0
+color = Color(1, 0.85, 0.1, 1)
+
+[node name="Torso" type="ColorRect" parent="Room/Character"]
+offset_left = -9.0
+offset_top = -36.0
+offset_right = 9.0
+offset_bottom = 12.0
+color = Color(1, 0.85, 0.1, 1)
+
+[node name="LeftLeg" type="Node2D" parent="Room/Character"]
+position = Vector2(-5, 14)
+
+[node name="LegRect" type="ColorRect" parent="Room/Character/LeftLeg"]
+offset_left = -3.0
+offset_top = 0.0
+offset_right = 3.0
+offset_bottom = 42.0
+color = Color(1, 0.85, 0.1, 1)
+
+[node name="RightLeg" type="Node2D" parent="Room/Character"]
+position = Vector2(5, 14)
+
+[node name="LegRect" type="ColorRect" parent="Room/Character/RightLeg"]
+offset_left = -3.0
+offset_top = 0.0
+offset_right = 3.0
+offset_bottom = 42.0
+color = Color(1, 0.85, 0.1, 1)
+
+[node name="LeftArm" type="Node2D" parent="Room/Character"]
+position = Vector2(-13, -30)
+
+[node name="ArmRect" type="ColorRect" parent="Room/Character/LeftArm"]
+offset_left = -6.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 36.0
+color = Color(1, 0.85, 0.1, 1)
+
+[node name="RightArm" type="Node2D" parent="Room/Character"]
+position = Vector2(12, -30)
+
+[node name="ArmRect" type="ColorRect" parent="Room/Character/RightArm"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 6.0
+offset_bottom = 36.0
+color = Color(1, 0.85, 0.1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_main")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="SkipLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -40.0
+offset_right = -20.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "[Press any key / Space to skip]"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

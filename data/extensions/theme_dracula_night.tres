@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_173gb"]
+
+[resource]
+script = ExtResource("1_173gb")
+id = &"theme_dracula_night"
+title = "Dracula Synthwave Theme"
+publisher = "vampire.io"
+description = "Vibrant violet and neon magenta dark theme optimized for late-night tactical debugging sessions."
+price = 120
+category = "Theme"
+version = "1.8.0"
+icon_name = "palette"
+downloads = "6.2k"
+theme_bg_color = Color(0.065, 0.05, 0.09, 1)
+theme_code_color = Color(0.972549, 0.98039216, 0.9882353, 1)
+theme_accent_color = Color(0.9254902, 0.28235295, 0.6, 1)
+theme_keyword_color = Color(0.65882355, 0.33333334, 0.96862745, 1)
+theme_comment_color = Color(0.39215687, 0.45490196, 0.54509807, 1)
+theme_string_color = Color(0.95686275, 0.44705883, 0.7137255, 1)

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_n171a"]
+
+[resource]
+script = ExtResource("1_n171a")
+id = &"theme_amber_crt"
+title = "Amber CRT Phosphor Theme"
+publisher = "retro.hardware"
+description = "Warm retro amber terminal glow recreating 1980s military mainframe consoles."
+price = 180
+category = "Theme"
+version = "1.2.0"
+icon_name = "palette"
+rating = 4.7
+downloads = "4.1k"
+theme_bg_color = Color(0.06, 0.045, 0.02, 1)
+theme_code_color = Color(0.99215686, 0.9019608, 0.5411765, 1)
+theme_accent_color = Color(0.9607843, 0.61960787, 0.043137256, 1)
+theme_keyword_color = Color(0.9843137, 0.7490196, 0.14117648, 1)
+theme_comment_color = Color(0.47058824, 0.20784314, 0.05882353, 1)
+theme_string_color = Color(0.99607843, 0.9411765, 0.5411765, 1)

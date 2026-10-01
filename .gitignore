@@ -1,17 +1,80 @@
-# Godot 4+ specific ignores
+# ==========================================
+# Godot 4+ ignores
+# ==========================================
 .godot/
 .nomedia
 
-# Godot-specific ignores
+# Godot legacy / cache
 .import/
 export.cfg
 export_credentials.cfg
 *.tmp
 
-# Imported translations (automatically generated from CSV files)
+# Imported translations (generated from CSV/PO)
 *.translation
 
-# Mono-specific ignores
+# Addon caches & updates
+addons/.godot_ai_update/
+
+# ==========================================
+# Mono / .NET / C#
+# ==========================================
 .mono/
 data_*/
 mono_crash.*.json
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.userprefs
+*.suo
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ==========================================
+# Build & Export Outputs
+# ==========================================
+build/
+bin/
+dist/
+exports/
+*.pck
+*.apk
+*.aab
+
+# ==========================================
+# IDE & Editor Configs
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==========================================
+# Operating System Files
+# ==========================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ==========================================
+# Logs & Crash Dumps
+# ==========================================
+*.log
+crash.log

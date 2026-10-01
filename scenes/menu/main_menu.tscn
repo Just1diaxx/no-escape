@@ -1,0 +1,390 @@
+[gd_scene format=3 uid="uid://dm28x1p7ksq9n"]
+
+[ext_resource type="Script" uid="uid://b08qkl3p5jnd7" path="res://scenes/menu/main_menu.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.045, 0.05, 0.07, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flat"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hover"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_danger"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.3, 0.08, 0.1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9, 0.25, 0.35, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MainMenu" type="Control" unique_id=1849182736]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="Panel" parent="." unique_id=1738291045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1948273615]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 45
+
+[node name="MainVBox" type="VBoxContainer" parent="MarginContainer" unique_id=1029384712]
+layout_mode = 2
+
+[node name="HeaderBox" type="VBoxContainer" parent="MarginContainer/MainVBox" unique_id=1849203948]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/MainVBox/HeaderBox" unique_id=1726354890]
+custom_minimum_size = Vector2(450, 68)
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=50][b][color=#f1f5f9]No [/color][color=#38bdf8]ESC[/color][color=#f1f5f9]ape[/color][/b][/font_size]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SubtitleLabel" type="Label" parent="MarginContainer/MainVBox/HeaderBox" unique_id=1928374019]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.45, 0.55, 1)
+theme_override_font_sizes/font_size = 11
+text = "SUB-LEVEL 30 // RECURSIVE ESCAPE PROTOCOL"
+
+[node name="HeaderDivider" type="ColorRect" parent="MarginContainer/MainVBox/HeaderBox" unique_id=1829304910]
+custom_minimum_size = Vector2(280, 1)
+layout_mode = 2
+color = Color(0.22, 0.74, 0.97, 0.25)
+
+[node name="Spacer" type="Control" parent="MarginContainer/MainVBox" unique_id=1738492019]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="NavArea" type="Control" parent="MarginContainer/MainVBox" unique_id=1839201928]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainNav" type="VBoxContainer" parent="MarginContainer/MainVBox/NavArea" unique_id=1928374920]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="ContinueBox" type="VBoxContainer" parent="MarginContainer/MainVBox/NavArea/MainNav" unique_id=1829304911]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/MainVBox/NavArea/MainNav/ContinueBox" unique_id=1829304918]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.98, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "CONTINUE"
+alignment = 0
+
+[node name="ContinueSubLabel" type="Label" parent="MarginContainer/MainVBox/NavArea/MainNav/ContinueBox" unique_id=1829304912]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.46, 0.56, 1)
+theme_override_font_sizes/font_size = 10
+text = "clearance: level 30"
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/MainVBox/NavArea/MainNav" unique_id=1829304919]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.78, 0.84, 0.92, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "NEW GAME"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/MainVBox/NavArea/MainNav" unique_id=1829304920]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.78, 0.84, 0.92, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "SETTINGS"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="MarginContainer/MainVBox/NavArea/MainNav" unique_id=1829304921]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.55, 0.62, 0.72, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.35, 0.45, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "QUIT"
+alignment = 0
+
+[node name="SettingsNav" type="VBoxContainer" parent="MarginContainer/MainVBox/NavArea" unique_id=1928374940]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="SettingsTitle" type="Label" parent="MarginContainer/MainVBox/NavArea/SettingsNav" unique_id=1928374941]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 14
+text = "SYSTEM SETTINGS"
+
+[node name="SettingsRows" type="VBoxContainer" parent="MarginContainer/MainVBox/NavArea/SettingsNav" unique_id=1928374942]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="DisplayRow" type="HBoxContainer" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows" unique_id=1928374943]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="DisplayLabel" type="Label" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/DisplayRow" unique_id=1928374944]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 13
+text = "DISPLAY"
+
+[node name="FullscreenButton" type="Button" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/DisplayRow" unique_id=1928374945]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.98, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "[ WINDOWED ]"
+
+[node name="WindowSizeRow" type="HBoxContainer" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows" unique_id=1928374980]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="WindowSizeLabel" type="Label" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/WindowSizeRow" unique_id=1928374981]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 13
+text = "WINDOW SIZE"
+
+[node name="WindowSizeButton" type="Button" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/WindowSizeRow" unique_id=1928374982]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.98, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "[ 1280 x 720 ]"
+
+[node name="VolumeRow" type="HBoxContainer" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows" unique_id=1928374946]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="VolumeLabel" type="Label" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/VolumeRow" unique_id=1928374947]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 13
+text = "MASTER VOLUME"
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/VolumeRow" unique_id=1928374948]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+value = 80.0
+
+[node name="VolumeValueLabel" type="Label" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/VolumeRow" unique_id=1928374949]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.46, 0.56, 1)
+theme_override_font_sizes/font_size = 11
+text = "80%"
+
+[node name="MuteRow" type="HBoxContainer" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows" unique_id=1928374950]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="MuteLabel" type="Label" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/MuteRow" unique_id=1928374951]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 13
+text = "AUDIO OUTPUT"
+
+[node name="MuteButton" type="Button" parent="MarginContainer/MainVBox/NavArea/SettingsNav/SettingsRows/MuteRow" unique_id=1928374952]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.98, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "[ ACTIVE ]"
+
+
+
+[node name="SettingsBackButton" type="Button" parent="MarginContainer/MainVBox/NavArea/SettingsNav" unique_id=1928374956]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.55, 0.62, 0.72, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "BACK"
+alignment = 0
+
+[node name="ConfirmNav" type="VBoxContainer" parent="MarginContainer/MainVBox/NavArea" unique_id=1928374960]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="ConfirmTitle" type="Label" parent="MarginContainer/MainVBox/NavArea/ConfirmNav" unique_id=1928374961]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.3, 0.38, 1)
+theme_override_font_sizes/font_size = 14
+text = "RESET CLEARANCE & START FROM SUB-LEVEL 30?"
+
+[node name="ConfirmDesc" type="Label" parent="MarginContainer/MainVBox/NavArea/ConfirmNav" unique_id=1928374962]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.62, 0.72, 1)
+theme_override_font_sizes/font_size = 12
+text = "All saved progress, solved assignments, and modified files will be wiped."
+
+[node name="ConfirmButtonsHBox" type="HBoxContainer" parent="MarginContainer/MainVBox/NavArea/ConfirmNav" unique_id=1928374963]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="ConfirmYesButton" type="Button" parent="MarginContainer/MainVBox/NavArea/ConfirmNav/ConfirmButtonsHBox" unique_id=1928374964]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_danger")
+text = "YES, RESET PROGRESS"
+
+[node name="ConfirmCancelButton" type="Button" parent="MarginContainer/MainVBox/NavArea/ConfirmNav/ConfirmButtonsHBox" unique_id=1928374965]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.9, 1)
+theme_override_colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flat")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flat")
+text = "CANCEL"
+
+[node name="FooterHBox" type="HBoxContainer" parent="MarginContainer/MainVBox" unique_id=1928374970]
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="MarginContainer/MainVBox/FooterHBox" unique_id=1928374971]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28, 0.35, 0.44, 1)
+theme_override_font_sizes/font_size = 11
+text = "SYS_VER 1.0.0"
+
+[node name="FooterSpacer" type="Control" parent="MarginContainer/MainVBox/FooterHBox" unique_id=1928374972]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CreditsLabel" type="Label" parent="MarginContainer/MainVBox/FooterHBox" unique_id=1928374973]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.42, 0.52, 1)
+theme_override_font_sizes/font_size = 11
+text = "made with ♥ by @justty3p"
+
+[node name="CrtOverlay" type="ColorRect" parent="." unique_id=1928374974]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.03)

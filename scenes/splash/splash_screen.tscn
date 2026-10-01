@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cy84m2npxk7s1"]
+
+[ext_resource type="Script" uid="uid://dp71slgkm813c" path="res://scenes/splash/splash_screen.gd" id="1_script"]
+
+[node name="SplashScreen" type="Control" unique_id=2081917241]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1419283741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1982736451]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContentVBox" type="VBoxContainer" parent="CenterContainer" unique_id=1192847562]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TitleLabel" type="RichTextLabel" parent="CenterContainer/ContentVBox" unique_id=1384759201]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(520, 72)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=46][b][color=#f8fafc]No [/color][color=#00e5ff]ESC[/color][color=#f8fafc]ape[/color][/b][/font_size][/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Divider" type="ColorRect" parent="CenterContainer/ContentVBox" unique_id=1748291034]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0, 0.898039, 1, 0.5)
+
+[node name="CreditsContainer" type="HBoxContainer" parent="CenterContainer/ContentVBox" unique_id=1627384950]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="PrefixLabel" type="Label" parent="CenterContainer/ContentVBox/CreditsContainer" unique_id=1847291034]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.78, 1)
+theme_override_font_sizes/font_size = 15
+text = "made with "
+
+[node name="HeartLabel" type="Label" parent="CenterContainer/ContentVBox/CreditsContainer" unique_id=1928374615]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25, 0.35, 1)
+theme_override_font_sizes/font_size = 17
+text = "♥"
+
+[node name="AuthorLabel" type="Label" parent="CenterContainer/ContentVBox/CreditsContainer" unique_id=1029384756]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.78, 1)
+theme_override_font_sizes/font_size = 15
+text = " by "
+
+[node name="HandleLabel" type="Label" parent="CenterContainer/ContentVBox/CreditsContainer" unique_id=1584930291]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 15
+text = "@justty3p"
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=1849201948]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

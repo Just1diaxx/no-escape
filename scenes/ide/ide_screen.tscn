@@ -1,0 +1,767 @@
+[gd_scene format=3 uid="uid://cx6i46k3lq6tq"]
+
+[ext_resource type="Script" uid="uid://ecvaked8sqbr" path="res://scenes/ide/ide_screen.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c0nkkmccms7jv" path="res://addons/at-icons/control/code.svg" id="2_code_icon"]
+[ext_resource type="Texture2D" uid="uid://hgigwgegq3v8" path="res://addons/at-icons/control/folder.svg" id="3_folder_icon"]
+[ext_resource type="Texture2D" uid="uid://hkl0hso7h6dv" path="res://addons/at-icons/control/magnifying_glass.svg" id="4_search_icon"]
+[ext_resource type="Texture2D" uid="uid://b4dk202gwhr01" path="res://addons/at-icons/control/git_branch.svg" id="5_git_icon"]
+[ext_resource type="Texture2D" uid="uid://bt8mr2hyfcvye" path="res://addons/at-icons/control/play.svg" id="6_play_icon"]
+[ext_resource type="Texture2D" uid="uid://gdhxyvj36k68" path="res://addons/at-icons/control/jigsaw_piece.svg" id="7_ext_icon"]
+[ext_resource type="Texture2D" uid="uid://c4pq0u7wvup2" path="res://addons/at-icons/control/cog.svg" id="8_settings_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_titlebar"]
+bg_color = Color(0.047, 0.055, 0.075, 1)
+border_width_bottom = 1
+border_color = Color(0.12, 0.14, 0.19, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbtn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbtn_hover_min"]
+bg_color = Color(0.16, 0.2, 0.28, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbtn_hover_close"]
+bg_color = Color(0.85, 0.22, 0.22, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_activitybar"]
+bg_color = Color(0.035, 0.04, 0.055, 1)
+border_width_right = 1
+border_color = Color(0.12, 0.14, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_act_btn_active"]
+bg_color = Color(0.12, 0.15, 0.22, 1)
+border_width_left = 2
+border_color = Color(0.22, 0.74, 0.97, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_act_btn_hover"]
+bg_color = Color(0.1, 0.12, 0.17, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sidebar"]
+bg_color = Color(0.055, 0.063, 0.082, 1)
+border_width_right = 1
+border_color = Color(0.12, 0.14, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tabbar"]
+bg_color = Color(0.047, 0.055, 0.075, 1)
+border_width_bottom = 1
+border_color = Color(0.1, 0.11, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_run_normal"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.04, 0.36, 0.26, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1, 0.65, 0.45, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_run_pressed"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.03, 0.28, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1, 0.55, 0.38, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_run_hover"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.06, 0.48, 0.34, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.85, 0.58, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_breadcrumbs"]
+bg_color = Color(0.06, 0.067, 0.09, 1)
+border_width_bottom = 1
+border_color = Color(0.1, 0.11, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_editor"]
+bg_color = Color(0.07, 0.078, 0.11, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_markdown"]
+content_margin_left = 28.0
+content_margin_top = 22.0
+content_margin_right = 28.0
+content_margin_bottom = 22.0
+bg_color = Color(0.07, 0.078, 0.11, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_panel"]
+bg_color = Color(0.043, 0.047, 0.063, 1)
+border_width_top = 1
+border_color = Color(0.14, 0.16, 0.22, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_term_input"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.067, 0.075, 0.1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.22, 0.31, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_statusbar"]
+bg_color = Color(0.035, 0.04, 0.055, 1)
+border_width_top = 1
+border_color = Color(0.12, 0.14, 0.19, 1)
+
+[node name="IDEScreen" type="Control" unique_id=1793090349]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="RootLayout" type="VBoxContainer" parent="." unique_id=1174306471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBar" type="PanelContainer" parent="RootLayout" unique_id=1171937051]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_titlebar")
+
+[node name="Margin" type="MarginContainer" parent="RootLayout/TitleBar" unique_id=249250139]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 8
+
+[node name="HBox" type="HBoxContainer" parent="RootLayout/TitleBar/Margin" unique_id=1434993272]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLogo" type="TextureRect" parent="RootLayout/TitleBar/Margin/HBox" unique_id=2001923485]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_code_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconTitle" type="Label" parent="RootLayout/TitleBar/Margin/HBox" unique_id=955338089]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.9, 0.94, 1)
+theme_override_font_sizes/font_size = 12
+text = "No ESCape  —  Workstation IDE"
+
+[node name="WorkspaceBadge" type="Label" parent="RootLayout/TitleBar/Margin/HBox" unique_id=955338090]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.52, 0.65, 1)
+theme_override_font_sizes/font_size = 11
+text = "[node_042 // clearance: sub-level 30]"
+
+[node name="MoneyBadge" type="Label" parent="RootLayout/TitleBar/Margin/HBox" unique_id=955338095]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.83, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "[€ 500]"
+
+[node name="Spacer" type="Control" parent="RootLayout/TitleBar/Margin/HBox" unique_id=990014820]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WindowControls" type="HBoxContainer" parent="RootLayout/TitleBar/Margin/HBox" unique_id=894701218]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MinimizeButton" type="Button" parent="RootLayout/TitleBar/Margin/HBox/WindowControls" unique_id=618715942]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.6, 0.68, 0.78, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wbtn_hover_min")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wbtn")
+text = "─"
+
+[node name="MaximizeButton" type="Button" parent="RootLayout/TitleBar/Margin/HBox/WindowControls" unique_id=618715943]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.6, 0.68, 0.78, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wbtn_hover_min")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wbtn")
+text = "□"
+
+[node name="CloseButton" type="Button" parent="RootLayout/TitleBar/Margin/HBox/WindowControls" unique_id=376964298]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.7, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wbtn_hover_close")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wbtn")
+text = "✕"
+
+[node name="MainBody" type="HBoxContainer" parent="RootLayout" unique_id=1427488488]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="ActivityBar" type="PanelContainer" parent="RootLayout/MainBody" unique_id=1112488073]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_activitybar")
+
+[node name="Margin" type="MarginContainer" parent="RootLayout/MainBody/ActivityBar" unique_id=1454423314]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="RootLayout/MainBody/ActivityBar/Margin" unique_id=1388096662]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ExplorerIcon" type="Button" parent="RootLayout/MainBody/ActivityBar/Margin/VBox" unique_id=172132168]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+tooltip_text = "Explorer (Files)"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_normal_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_colors/icon_hover_color = Color(0.6, 0.88, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_act_btn_active")
+theme_override_styles/hover = SubResource("StyleBoxFlat_act_btn_active")
+icon = ExtResource("3_folder_icon")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SearchIcon" type="Button" parent="RootLayout/MainBody/ActivityBar/Margin/VBox" unique_id=288609609]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+tooltip_text = "Search Workspace"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_normal_color = Color(0.48, 0.54, 0.65, 1)
+theme_override_colors/icon_hover_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_act_btn_hover")
+icon = ExtResource("4_search_icon")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SourceControlIcon" type="Button" parent="RootLayout/MainBody/ActivityBar/Margin/VBox" unique_id=1675223767]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+tooltip_text = "Source Control"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_normal_color = Color(0.48, 0.54, 0.65, 1)
+theme_override_colors/icon_hover_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_act_btn_hover")
+icon = ExtResource("5_git_icon")
+icon_alignment = 1
+expand_icon = true
+
+[node name="RunDebugIcon" type="Button" parent="RootLayout/MainBody/ActivityBar/Margin/VBox" unique_id=815882045]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+tooltip_text = "Run and Debug"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_normal_color = Color(0.48, 0.54, 0.65, 1)
+theme_override_colors/icon_hover_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_act_btn_hover")
+icon = ExtResource("6_play_icon")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ExtensionsIcon" type="Button" parent="RootLayout/MainBody/ActivityBar/Margin/VBox" unique_id=1351522702]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+tooltip_text = "Extensions & Packages"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_normal_color = Color(0.48, 0.54, 0.65, 1)
+theme_override_colors/icon_hover_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_act_btn_hover")
+icon = ExtResource("7_ext_icon")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer" type="Control" parent="RootLayout/MainBody/ActivityBar/Margin/VBox" unique_id=1402234738]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SettingsIcon" type="Button" parent="RootLayout/MainBody/ActivityBar/Margin/VBox" unique_id=664741830]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+tooltip_text = "Settings"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_normal_color = Color(0.48, 0.54, 0.65, 1)
+theme_override_colors/icon_hover_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbtn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_act_btn_hover")
+icon = ExtResource("8_settings_icon")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SideBar" type="PanelContainer" parent="RootLayout/MainBody" unique_id=883331321]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sidebar")
+
+[node name="Margin" type="MarginContainer" parent="RootLayout/MainBody/SideBar" unique_id=1741294184]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="RootLayout/MainBody/SideBar/Margin" unique_id=1273475158]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ExplorerView" type="VBoxContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox" unique_id=1273475159]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ExplorerHeaderHBox" type="HBoxContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExplorerView" unique_id=1026062239]
+layout_mode = 2
+
+[node name="ExplorerHeader" type="Label" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExplorerView/ExplorerHeaderHBox" unique_id=1026062238]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.55, 0.62, 0.75, 1)
+theme_override_font_sizes/font_size = 11
+text = "EXPLORER"
+
+[node name="WorkspaceHeader" type="Label" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExplorerView" unique_id=1515332406]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.92, 1)
+theme_override_font_sizes/font_size = 11
+text = "▾ NO_ESCAPE_WORKSPACE"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExplorerView" unique_id=185940179]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FileListContainer" type="VBoxContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExplorerView/ScrollContainer" unique_id=2023047801]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="ExtensionsView" type="VBoxContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox" unique_id=1273475160]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ExtensionsHeaderHBox" type="HBoxContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExtensionsView" unique_id=1026062240]
+layout_mode = 2
+
+[node name="ExtensionsHeader" type="Label" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExtensionsView/ExtensionsHeaderHBox" unique_id=1026062241]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.55, 0.62, 0.75, 1)
+theme_override_font_sizes/font_size = 11
+text = "EXTENSIONS: MARKETPLACE"
+
+[node name="ExtensionSearchInput" type="LineEdit" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExtensionsView" unique_id=1026062242]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.92, 0.98, 1)
+theme_override_colors/font_placeholder_color = Color(0.4, 0.46, 0.58, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_term_input")
+placeholder_text = "Search extensions..."
+clear_button_enabled = true
+
+[node name="ExtensionsScroll" type="ScrollContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExtensionsView" unique_id=185940180]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ExtensionsListContainer" type="VBoxContainer" parent="RootLayout/MainBody/SideBar/Margin/VBox/ExtensionsView/ExtensionsScroll" unique_id=2023047802]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="EditorArea" type="VBoxContainer" parent="RootLayout/MainBody" unique_id=1579572221]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="TabBarPanel" type="PanelContainer" parent="RootLayout/MainBody/EditorArea" unique_id=1200384928]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tabbar")
+
+[node name="Margin" type="MarginContainer" parent="RootLayout/MainBody/EditorArea/TabBarPanel" unique_id=1603442604]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 8
+
+[node name="TabHeaderHBox" type="HBoxContainer" parent="RootLayout/MainBody/EditorArea/TabBarPanel/Margin" unique_id=1603442603]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TabsContainer" type="HBoxContainer" parent="RootLayout/MainBody/EditorArea/TabBarPanel/Margin/TabHeaderHBox" unique_id=1660706196]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="RunButton" type="Button" parent="RootLayout/MainBody/EditorArea/TabBarPanel/Margin/TabHeaderHBox" unique_id=748947143]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 26)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Execute task suite (Ctrl+Enter / Run task.py)"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 1, 0.95, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0.5, 1, 0.75, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_run_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_run_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_run_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_run_normal")
+text = "Run Script"
+icon = ExtResource("6_play_icon")
+expand_icon = true
+
+[node name="BreadcrumbsPanel" type="PanelContainer" parent="RootLayout/MainBody/EditorArea" unique_id=1662979122]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_breadcrumbs")
+
+[node name="Margin" type="MarginContainer" parent="RootLayout/MainBody/EditorArea/BreadcrumbsPanel" unique_id=1125949474]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+
+[node name="BreadcrumbsLabel" type="Label" parent="RootLayout/MainBody/EditorArea/BreadcrumbsPanel/Margin" unique_id=462180784]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.58, 0.7, 1)
+theme_override_font_sizes/font_size = 11
+text = "workspace  ›  level_30  ›  INTRODUCTION.md"
+
+[node name="EditorCodeSplit" type="PanelContainer" parent="RootLayout/MainBody/EditorArea" unique_id=1333837295]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_editor")
+
+[node name="CodeEditor" type="CodeEdit" parent="RootLayout/MainBody/EditorArea/EditorCodeSplit" unique_id=275002720]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/caret_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_colors/background_color = Color(0.07, 0.078, 0.11, 1)
+theme_override_colors/current_line_color = Color(0.1, 0.12, 0.17, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_colors/line_number_color = Color(0.35, 0.4, 0.52, 1)
+caret_blink = true
+highlight_current_line = true
+gutters_draw_bookmarks = true
+gutters_draw_line_numbers = true
+gutters_draw_fold_gutter = true
+code_completion_enabled = true
+indent_use_spaces = true
+
+[node name="EmptyPlaceholder" type="CenterContainer" parent="RootLayout/MainBody/EditorArea/EditorCodeSplit" unique_id=1439234340]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EmptyLabel" type="Label" parent="RootLayout/MainBody/EditorArea/EditorCodeSplit/EmptyPlaceholder" unique_id=2143219987]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.44, 0.55, 1)
+theme_override_font_sizes/font_size = 13
+text = "No open files in editor.
+Select a file from the explorer on the left to begin."
+horizontal_alignment = 1
+
+[node name="MarkdownViewer" type="RichTextLabel" parent="RootLayout/MainBody/EditorArea/EditorCodeSplit" unique_id=532840918]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_colors/default_color = Color(0.88, 0.91, 0.96, 1)
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_markdown")
+bbcode_enabled = true
+autowrap_mode = 2
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="TerminalPanel" type="PanelContainer" parent="RootLayout/MainBody/EditorArea" unique_id=1411963361]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 195)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_terminal_panel")
+
+[node name="Margin" type="MarginContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel" unique_id=1612241101]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin" unique_id=1443029610]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TerminalHeader" type="HBoxContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox" unique_id=627866100]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="TabTermBtn" type="Button" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalHeader" unique_id=403676352]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.95, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "TERMINAL"
+flat = true
+
+[node name="TabProblemsBtn" type="Button" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalHeader" unique_id=215478913]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.55, 0.6, 0.72, 1)
+theme_override_font_sizes/font_size = 11
+text = "PROBLEMS (0)"
+flat = true
+
+[node name="TabOutputBtn" type="Button" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalHeader" unique_id=1026388223]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.55, 0.6, 0.72, 1)
+theme_override_font_sizes/font_size = 11
+text = "OUTPUT"
+flat = true
+
+[node name="TerminalView" type="VBoxContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox" unique_id=1807212491]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="TerminalScroll" type="ScrollContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalView" unique_id=1777684856]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TerminalOutput" type="RichTextLabel" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalView/TerminalScroll" unique_id=584260236]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.85, 0.88, 0.93, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+scroll_following = true
+
+[node name="InputRow" type="HBoxContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalView" unique_id=585676548]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PromptLabel" type="Label" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalView/InputRow" unique_id=1871044346]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 12
+text = "op@escape-node[30]:~$ "
+
+[node name="TerminalInput" type="LineEdit" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/TerminalView/InputRow" unique_id=1556046230]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.95, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_term_input")
+placeholder_text = "Type command (e.g. 'help', 'ls', 'cat INTRODUCTION.md', 'run task.py')..."
+caret_blink = true
+
+[node name="ProblemsView" type="ScrollContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox" unique_id=1074587509]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProblemsList" type="VBoxContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/ProblemsView" unique_id=1310787414]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="OutputView" type="ScrollContainer" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox" unique_id=2045019837]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OutputLabel" type="RichTextLabel" parent="RootLayout/MainBody/EditorArea/TerminalPanel/Margin/VBox/OutputView" unique_id=1987342100]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.85, 0.88, 0.93, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+scroll_following = true
+
+[node name="StatusBar" type="PanelContainer" parent="RootLayout" unique_id=624921052]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_statusbar")
+
+[node name="Margin" type="MarginContainer" parent="RootLayout/StatusBar" unique_id=405801859]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBox" type="HBoxContainer" parent="RootLayout/StatusBar/Margin" unique_id=1295134633]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GitBranch" type="Label" parent="RootLayout/StatusBar/Margin/HBox" unique_id=450309846]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.65, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "⎇ main*"
+
+[node name="ErrorsWarnings" type="Label" parent="RootLayout/StatusBar/Margin/HBox" unique_id=2142533244]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.65, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "⊗ 0  ⚠ 0"
+
+[node name="EscapeStatus" type="Label" parent="RootLayout/StatusBar/Margin/HBox" unique_id=1165601883]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.65, 0.25, 1)
+theme_override_font_sizes/font_size = 11
+text = "● LOCKDOWN ACTIVE"
+
+[node name="Spacer" type="Control" parent="RootLayout/StatusBar/Margin/HBox" unique_id=1385202127]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatusCursorPos" type="Label" parent="RootLayout/StatusBar/Margin/HBox" unique_id=872530651]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.65, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "Ln 1, Col 1"
+
+[node name="Spaces" type="Label" parent="RootLayout/StatusBar/Margin/HBox" unique_id=488277710]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.65, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "Spaces: 4"
+
+[node name="Encoding" type="Label" parent="RootLayout/StatusBar/Margin/HBox" unique_id=550892181]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.65, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "UTF-8"
+
+[node name="StatusFileType" type="Label" parent="RootLayout/StatusBar/Margin/HBox" unique_id=807989363]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 11
+text = "Markdown"

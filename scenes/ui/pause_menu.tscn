@@ -1,0 +1,293 @@
+[gd_scene format=3 uid="uid://ch8q2lp4d6v2m"]
+
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 32.0
+content_margin_top = 28.0
+content_margin_right = 32.0
+content_margin_bottom = 28.0
+bg_color = Color(0.06, 0.08, 0.11, 0.98)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22, 0.74, 0.97, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 18
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
+content_margin_left = 6.0
+content_margin_top = 8.0
+content_margin_right = 6.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opt_btn"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.12, 0.16, 0.22, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22, 0.74, 0.97, 0.3)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opt_btn_hover"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.18, 0.24, 0.32, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22, 0.74, 0.97, 0.8)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.03, 0.05, 0.85)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogPanel" type="PanelContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="ContentVBox" type="VBoxContainer" parent="CenterContainer/DialogPanel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderBox" type="VBoxContainer" parent="CenterContainer/DialogPanel/ContentVBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="CenterContainer/DialogPanel/ContentVBox/HeaderBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=24][b][color=#f1f5f9]SYSTEM [/color][color=#38bdf8]PAUSED[/color][/b][/font_size]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ClearanceLabel" type="Label" parent="CenterContainer/DialogPanel/ContentVBox/HeaderBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.5, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "SUB-LEVEL 30 // OPERATOR TERMINAL"
+
+[node name="HeaderDivider" type="ColorRect" parent="CenterContainer/DialogPanel/ContentVBox/HeaderBox"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0.22, 0.74, 0.97, 0.3)
+
+[node name="NavContainer" type="MarginContainer" parent="CenterContainer/DialogPanel/ContentVBox"]
+layout_mode = 2
+
+[node name="MainNav" type="VBoxContainer" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/MainNav"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.94, 0.96, 0.98, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+text = "CONTINUE"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/MainNav"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+text = "SETTINGS"
+alignment = 0
+
+[node name="BackToMenuButton" type="Button" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/MainNav"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+text = "BACK TO MENU"
+alignment = 0
+
+[node name="SettingsNav" type="VBoxContainer" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SettingsHeader" type="Label" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.45, 0.55, 1)
+theme_override_font_sizes/font_size = 11
+text = "// SYSTEM CONFIGURATION"
+
+[node name="FullscreenRow" type="HBoxContainer" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/FullscreenRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "DISPLAY MODE"
+
+[node name="FullscreenButton" type="Button" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/FullscreenRow"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.98, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_opt_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opt_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_opt_btn")
+text = "[ FULLSCREEN ]"
+
+[node name="WindowSizeRow" type="HBoxContainer" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/WindowSizeRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "WINDOW RESOLUTION"
+
+[node name="WindowSizeButton" type="Button" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/WindowSizeRow"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.98, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_opt_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opt_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_opt_btn")
+text = "[ 1280 x 720 ]"
+
+[node name="VolumeRow" type="HBoxContainer" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/VolumeRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "MASTER VOLUME"
+
+[node name="VolumeSlider" type="HSlider" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/VolumeRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_mode = 0
+max_value = 100.0
+value = 100.0
+
+[node name="VolumeValueLabel" type="Label" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/VolumeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.74, 0.97, 1)
+theme_override_font_sizes/font_size = 13
+text = "100%"
+horizontal_alignment = 2
+
+[node name="MuteRow" type="HBoxContainer" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/MuteRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "AUDIO OUTPUT"
+
+[node name="MuteButton" type="Button" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav/MuteRow"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.98, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_opt_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opt_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_opt_btn")
+text = "[ ACTIVE ]"
+
+[node name="SettingsBackSpacer" type="Control" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="SettingsBackButton" type="Button" parent="CenterContainer/DialogPanel/ContentVBox/NavContainer/SettingsNav"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.4, 0.5, 0.6, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+text = "< BACK"
+alignment = 0

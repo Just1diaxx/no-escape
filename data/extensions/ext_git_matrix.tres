@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_5iecq"]
+
+[resource]
+script = ExtResource("1_5iecq")
+id = &"ext_git_matrix"
+title = "Git Matrix Visualizer"
+publisher = "version.control"
+description = "Interactive DAG commit visualizer, visual merge conflict resolver, and signature verifier."
+price = 200
+category = "Productivity"
+version = "2.0.4"
+icon_name = "git_branch"
+downloads = "7.5k"

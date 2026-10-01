@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_u22vp"]
+
+[resource]
+script = ExtResource("1_u22vp")
+id = &"ext_hex_dump"
+title = "Hex-Dump Memory Map"
+publisher = "lowlevel.org"
+description = "Byte-by-byte memory visualizer with pointer disassembly for low-level node diagnostics."
+price = 300
+category = "Debugger"
+version = "4.0.0"
+icon_name = "database"
+rating = 5.0
+downloads = "1.8k"

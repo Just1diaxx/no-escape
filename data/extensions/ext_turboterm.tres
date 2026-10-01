@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_3l72d"]
+
+[resource]
+script = ExtResource("1_3l72d")
+id = &"ext_turboterm"
+title = "Turbo Terminal Visualizer"
+publisher = "telemetry.systems"
+description = "High-throughput terminal emulator buffer with ANSI formatting and memory-mapped scrolling."
+price = 80
+category = "Terminal"
+version = "1.5.2"
+icon_name = "file_terminal"
+rating = 4.6
+downloads = "3.9k"

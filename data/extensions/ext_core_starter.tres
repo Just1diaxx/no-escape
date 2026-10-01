@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ExtensionResource" format=3]
+
+[ext_resource type="Script" path="res://scenes/ide/extensions/extension_resource.gd" id="1_7scyn"]
+
+[resource]
+script = ExtResource("1_7scyn")
+id = &"ext_core_starter"
+title = "Cyber Hacker Core"
+publisher = "ksk.os"
+description = "Standard-issue workstation suite. Includes basic autocomplete, shell shortcuts, and status diagnostics."
+category = "Starter Pack"
+icon_name = "circuit_board"
+rating = 5.0
+downloads = "10.4k"

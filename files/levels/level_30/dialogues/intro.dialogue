@@ -1,0 +1,12 @@
+~ start
+
+George TOWNLEY: Heya! I am George Townley, your supervisor. Welcome to the project. As this is your first day, you have been assigned to a simple task. Read INTRODUCTION.md for more info about the project and your task.
+YOU: Okay, thanks.
+George TOWNLEY: I'm sending you the files right now. They should arrive shortly.
+YOU: ... => END
+
+~ received
+
+George TOWNLEY: There you go! Task is in task.py and details are in INTRODUCTION.md
+YOU: Thank you sir!
+George TOWNLEY: Good. I'll be checking on your progress. => END

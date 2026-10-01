@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://noescape_balloon_v1"]
+
+[ext_resource type="Script" path="res://scenes/ui/dialogue_balloon.gd" id="1_balloon_script"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_dlabel"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_rmenu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 18.0
+content_margin_top = 14.0
+content_margin_right = 18.0
+content_margin_bottom = 14.0
+bg_color = Color(0.06, 0.07, 0.09, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22, 0.74, 0.97, 0.55)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_response_normal"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.10, 0.12, 0.15, 0.0)
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_response_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.22, 0.74, 0.97, 0.12)
+border_width_left = 1
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color(0.22, 0.74, 0.97, 0.7)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_response_focus"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.22, 0.74, 0.97, 0.18)
+border_width_left = 1
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color(0.22, 0.74, 0.97, 1.0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_balloon"]
+default_font_size = 15
+Button/colors/font_color = Color(0.75, 0.82, 0.92, 1)
+Button/colors/font_hover_color = Color(0.22, 0.74, 0.97, 1)
+Button/colors/font_focus_color = Color(0.22, 0.74, 0.97, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_response_normal")
+Button/styles/hover = SubResource("StyleBoxFlat_response_hover")
+Button/styles/focus = SubResource("StyleBoxFlat_response_focus")
+Button/styles/pressed = SubResource("StyleBoxFlat_response_hover")
+Button/styles/disabled = SubResource("StyleBoxFlat_response_normal")
+
+[node name="DialogueBalloon" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_balloon_script")
+
+[node name="Balloon" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_balloon")
+
+[node name="PanelAnchor" type="MarginContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -160.0
+offset_right = -40.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/PanelAnchor"]
+clip_children = 2
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Inner" type="VBoxContainer" parent="Balloon/PanelAnchor/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CharacterLabel" type="Label" parent="Balloon/PanelAnchor/PanelContainer/Inner"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.74, 0.97, 0.9)
+theme_override_font_sizes/font_size = 12
+text = "CHARACTER"
+
+[node name="DialogueLabel" parent="Balloon/PanelAnchor/PanelContainer/Inner" instance=ExtResource("2_dlabel")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.88, 0.92, 0.97, 1)
+theme_override_font_sizes/font_size = 15
+text = "..."
+
+[node name="ProgressRow" type="HBoxContainer" parent="Balloon/PanelAnchor/PanelContainer/Inner"]
+layout_mode = 2
+size_flags_horizontal = 3
+visible = false
+
+[node name="Spacer" type="Control" parent="Balloon/PanelAnchor/PanelContainer/Inner/ProgressRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProgressIndicator" type="Label" parent="Balloon/PanelAnchor/PanelContainer/Inner/ProgressRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.74, 0.97, 0.9)
+theme_override_font_sizes/font_size = 14
+text = "▼"
+
+[node name="ResponsesContainer" type="CenterContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/ResponsesContainer" node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 4
+alignment = 1
+script = ExtResource("3_rmenu")
+response_template = NodePath("ResponseExample")
+
+[node name="ResponseExample" type="Button" parent="Balloon/ResponsesContainer/ResponsesMenu"]
+layout_mode = 2
+text = "Response"
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="Balloon/ResponsesContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

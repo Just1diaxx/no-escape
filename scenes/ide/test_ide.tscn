@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://test_ide_dbg"]
+
+[ext_resource type="Script" path="res://scenes/ide/test_ide.gd" id="1_script"]
+
+[node name="TestIDE" type="Control"]
+script = ExtResource("1_script")

@@ -1,0 +1,14 @@
+~ start
+
+George TOWNLEY: So... you learned the basics right?
+YOU: Yes, sir.
+George TOWNLEY: Your next task is about protecting our servers from a recent MITM (Man-In-The-Middle) we experienced a few days ago.
+Good luck.
+George TOWNLEY: I'm sending you the files for the next level right now. They should arrive shortly.
+YOU: ... => END
+
+~ received
+
+George TOWNLEY: There you go! Task is in task.py and details are in INTRODUCTION.md as always.
+YOU: Thank you sir!
+George TOWNLEY: Good. I'll be checking on your progress like last time. => END
